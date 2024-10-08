@@ -10,6 +10,7 @@ const createTokenAndSaveCookies = async (userId, res) => {
     secure: false,
     sameSite: "lax",
     path: "/", // Ensure the cookie is available throughout the site
+    domain: "https://blog-mern-back-7ao5.onrender.com",
   });
   await User.findByIdAndUpdate(userId, { token });
   return token;
