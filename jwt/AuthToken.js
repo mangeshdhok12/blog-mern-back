@@ -8,9 +8,10 @@ const createTokenAndSaveCookies = async (userId, res) => {
   res.cookie("jwt", token, {
     httpOnly: true, // Temporarily set to false for testing
     secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
+    sameSite: "None",
     path: "/", // Ensure the cookie is available throughout the site
-    domain: "https://blog-mern-back-7ao5.onrender.com",
+    domain: "blog-mern-back-7ao5.onrender.com",
+
   });
   await User.findByIdAndUpdate(userId, { token });
   return token;
