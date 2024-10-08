@@ -8,7 +8,7 @@ const createTokenAndSaveCookies = async (userId, res) => {
   res.cookie("jwt", token, {
     httpOnly: true, // Temporarily set to false for testing
     secure: process.env.NODE_ENV === "production",
-    sameSite: "None",
+    sameSite: "lax",
     path: "/", // Ensure the cookie is available throughout the site
     domain: "https://blog-mern-back-7ao5.onrender.com",
   });
