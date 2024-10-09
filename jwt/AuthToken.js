@@ -6,10 +6,10 @@ const createTokenAndSaveCookies = async (userId, res) => {
     expiresIn: "30d",
   });
   res.cookie("jwt", token, {
-    httpOnly: true, // Temporarily set to false for testing
+    httpOnly: true, 
     secure: process.env.NODE_ENV === "production",
     sameSite: "None",
-    path: "/", // Ensure the cookie is available throughout the site
+    path: "/", 
     domain: "blog-mern-back-7ao5.onrender.com",
 
   });
